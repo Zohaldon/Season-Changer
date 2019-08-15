@@ -9,18 +9,32 @@ window.addEventListener("DOMContentLoaded",	() => {
 
     var Winter = document.getElementById("w");
     var Summer = document.getElementById("s");
+    var Monsoon = document.getElementById("m");
 
     function ChangeSeasonToSummer()
     {
         Winter.style.display='none';
+        Monsoon.style.display='none';
         Summer.style.display='block';
+        document.body.style.backgroundImage = "url('images/Summer.jpeg')";
     }
 
     function ChangeSeasonToWinter()
     {
         Winter.style.display='block';
         Summer.style.display='none';
+        Monsoon.style.display='none';
+        document.body.style.backgroundImage = "url('images/Winter.jpeg')";
     }
+
+    function ChangeSeasonToMonsoon()
+    {
+        Winter.style.display='none';
+        Summer.style.display='none';
+        Monsoon.style.display='block';
+        document.body.style.backgroundImage = "url('images/Monsoon.jpg')";
+    }
+
 
     //Initiate Speech Recognition
     recognition.start();
@@ -45,6 +59,10 @@ window.addEventListener("DOMContentLoaded",	() => {
             if(transcript == 'summer')
             {
                 ChangeSeasonToSummer();
+            }
+            if(transcript == 'monsoon')
+            {
+                ChangeSeasonToMonsoon();
             }
         }
     });
